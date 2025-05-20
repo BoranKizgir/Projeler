@@ -1,0 +1,38 @@
+1. Precision (Kesinlik)
+Ne kadar doğru pozitif tahmin yaptığını gösterir.
+Yani modelin “popüler” dediği şarkıların ne kadarı gerçekten popüler?
+Spotify örneği:
+Eğer model 100 şarkıyı “popüler” diye işaretlediyse ve bunlardan 70’i gerçekten popülerse, precision %70 olur.
+
+2. Recall (Duyarlılık / Hassasiyet)
+Modelin gerçekten pozitif olanları ne kadar yakaladığını gösterir.
+Yani gerçekte popüler olan şarkıların ne kadarını model doğru tahmin edebildi?Spotify örneği:
+Eğer gerçek hayatta 100 popüler şarkı varsa ve model bunlardan 40’ını “popüler” olarak tahmin edebildiyse, recall %40 olur.
+
+Özet
+Precision: Modelin pozitif dediği örneklerin doğruluk oranı.
+Recall: Gerçek pozitiflerin model tarafından bulunma oranı.
+
+Neden önemli?
+Eğer Spotify’da sadece yüksek precision istiyorsan, model “popüler” dediğinde kesin emin olmalı ama bazı popüler şarkıları kaçırabilir (düşük recall).
+Eğer yüksek recall istersen, mümkün olduğunca çok popüler şarkıyı yakalamaya çalışırsın, ama yanlışlıkla az popüler şarkıları da “popüler” diye işaretleyebilirsin (düşük precision).
+
+Bu Değişkenler Neden Kullanıldı?
+Sayısal ve ölçülebilir oldukları için doğrudan modellemeye uygundular.
+Popülerlik ve erişim verileri, bir şarkının içeriği hakkında dolaylı bilgi sağlayabilir.
+Örneğin, explicit şarkılar gençler arasında daha popüler olabilir veya belirli platformlarda daha fazla çalınabilir.
+Eksik veri oranları düşüktü, bu nedenle temizleme işlemi kolaydı.
+Makine öğrenmesi algoritmaları bu tür çok boyutlu verilerle iyi çalışır.
+
+
+Hedef Değişken (Target Variable):
+Explicit Track:
+Bu sütun 0 veya 1 değerini alıyor.
+0: Şarkı “temiz” yani küfür/barındırmıyor.
+1: Şarkı “explicit” yani küfürlü veya uygunsuz içerik içeriyor.
+
+Modelin amacı, aşağıdaki diğer verileri kullanarak bir şarkının explicit olup olmadığını tahmin etmektir.
+Bu Python kodu, bir veri madenciliği projesinde, Spotify’daki en çok dinlenen şarkılar veri setini kullanarak bir şarkının "explicit" yani müstehcen içerikli olup olmadığını tahmin etmeye çalışıyor.
+
+
+Bu analiz, verilen şarkı verilerine bakarak bir şarkının "explicit" olup olmadığını tahmin etmeyi amaçlayan bir sınıflandırma problemidir. Her modelin başarısı ölçülür ve hangisinin daha iyi performans verdiği gözlemlenir.

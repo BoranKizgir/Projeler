@@ -1,0 +1,37 @@
+Makine öğrenmesinde sınıflandırma modellerini değerlendirirken sıkça kullanılan metrikler şunlardır: precision (kesinlik), recall (duyarlılık), f1-score ve support.
+1. Precision (Kesinlik)
+"Modelin 1 dediği sonuçların ne kadarı gerçekten 1?"
+Yani:
+Örneğin: Model 10 ülkeye "yüksek ölüm oranı" (1) dediyse ve bunların 9'u gerçekten yüksekse, precision = 0.90 olur.
+Yüksek precision, yanlış alarmın az olduğunu gösterir.
+
+2. Recall (Duyarlılık / Hassasiyet)
+"Gerçekte 1 olanların ne kadarını model doğru tahmin etmiş?"
+Örneğin: Gerçekte 20 ülke yüksek ölüm oranına sahip ama model sadece 18'ini bulabilmişse, recall düşer.
+Yüksek recall, kaçırılan pozitif sınıf sayısının az olduğunu gösterir.
+
+3. F1-Score
+Precision ve Recall’un dengeli ortalamasıdır.
+Hem precision hem recall önemliyse f1-score kullanılır.
+1’e yaklaştıkça model daha başarılı demektir.
+
+4. Support
+Her sınıfa ait gerçek örnek sayısıdır.
+Örneğin:
+0 sınıfı (düşük ölüm oranı) için support = 29 → test verisinde 29 ülke bu sınıfta.
+1 sınıfı (yüksek ölüm oranı) için support = 18 → test verisinde 18 ülke bu sınıfta.
+
+Accuracy (Doğruluk)
+Modelin genel doğruluğudur.
+Tüm doğru tahminlerin toplam tahmin sayısına oranı
+Örneğin: 47 ülkenin 47’si doğruysa → accuracy = 1.00 (yani %100)
+
+Macro Avg (Makro Ortalama)
+Her sınıfın (0 ve 1) precision, recall ve f1-score değerlerinin ortalamasıdır.
+Sınıflar arasında eşit önem verir, veri sayısına bakmaz.
+Yani: Sınıfın büyüklüğü fark etmeksizin ortalama alır.
+
+Weighted Avg (Ağırlıklı Ortalama)
+Her sınıfın metriklerinin, o sınıfa ait örnek sayısıyla (support) çarpılarak ortalamasının alınmasıdır.
+Büyük sınıflar daha çok etkiler.
+Yani: Çok sayıda örneğe sahip sınıfın değeri daha çok hesaba katılır.
